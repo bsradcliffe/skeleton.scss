@@ -1,0 +1,31 @@
+{
+  "name": "Skeleton.scss",
+  "version": "2.0.4",
+  "authors": [
+    "Ben Radcliffe <hello@benradcliffe.com>"
+  ],
+  "description": "Skeleton.scss is a modified, unofficial SASS port of the Skeleton CSS framework authored by Dave Gamache.",
+  "main": "skeleton.scss",
+  "keywords": [
+    "skeleton",
+    "scss",
+    "sass",
+    "css",
+    "responsive",
+    "boilerplate",
+    "framework"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/bradcliffe/skeleton.scss",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize.css": "~3.0.2"
+  }
+}
