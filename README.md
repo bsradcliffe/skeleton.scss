@@ -22,6 +22,22 @@ $ bower install skeleton.scss
 Skeleton leverages the illustrious Normalize.css for element resets. It is configured by default to utilize this file via an `@import` statement. If you do not wish to use `normalize.css`, simply comment out its importing in the beginning of `skeleton.scss`.
 
 
+## Mixin(s?)
+
+Currently, Skeleton.scss uses a single mixin for including targeted media queries inside of declaration blocks. More mixins may come later, though the point of this framework is to leverage SASS while keeping a minimal footprint that does not fundamentally alter the bare bones approach of the vanilla Skeleton framework.
+
+### `respond-to($breakpoint)`
+ The `respond-to` mixin takes a single argument, `$breakpoint`, which it uses as a key to query the `$breakpoints` map for a matching value. To tailor a specific ruleset, simply include the mixin with your desired breakpoint and responsive declarations.
+
+    .container {
+      ...
+      @include respond-to('bp-extra-small') {
+        width: $container-width-larger-than-bp-extra-small;
+        padding: 0;
+      }
+    }
+
+
 ## Browser support
 
 - Chrome latest

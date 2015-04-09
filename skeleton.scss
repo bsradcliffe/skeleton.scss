@@ -45,13 +45,13 @@ $bp-large       : 1000px !default;
 $bp-extra-large : 1200px !default;
 
 /// This is a map leveraged by the responsive query manager mixin. Its keys
-/// and values should be kept in-sync with the preceding breakpoint variables.
+/// should be kept in-sync with the preceding breakpoint variables.
 $breakpoints: (
-  'bp-extra-small': 400px,
-  'bp-small': 550px,
-  'bp-medium': 750px,
-  'bp-large': 1000px,
-  'bp-extra-large': 1200px
+  'bp-extra-small': $bp-extra-small,
+  'bp-small': $bp-small,
+  'bp-medium': $bp-medium,
+  'bp-large': $bp-large,
+  'bp-extra-large': $bp-extra-large
 );
 
 // Colors: feel free to define more here
@@ -636,7 +636,7 @@ hr {
 ///
 /// The more conventional method of handling media queries would be to insert
 /// the following query blocks around the desired rules, but that kinda takes
-/// the fun out of SASS, right?
+/// the fun and utility out of SASS.
 
 // Larger than mobile
 @media (min-width: $bp-extra-small) {}
