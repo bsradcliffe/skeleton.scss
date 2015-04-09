@@ -157,7 +157,7 @@ $global-radius: 4px !default;
   }
 }
 
-// For devices larger than #{$bp-small}
+// For devices larger than $bp-small
 @media (min-width: $bp-small) {
   .one.column,
   .one.columns {
@@ -338,7 +338,7 @@ h6 {
   letter-spacing: 0;
 }
 
-// For devices larger than #{$bp-small}
+// For devices larger than $bp-small
 @media (min-width: $bp-small) {
   h1 {
     font-size: 5.0rem;
