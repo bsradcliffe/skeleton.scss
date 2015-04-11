@@ -9,6 +9,7 @@
 
 // Table of Contents
 // ––––––––––––––––––––––––––––––––––––––––––––––––––
+// - Constants
 // - Variables
 // - Functions
 // - Mixin(s)
@@ -33,6 +34,28 @@
 /// To opt out of using Normalize, simply comment out the line below.
 @import "../normalize.css/normalize.css";
 
+// Constants
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+$TOTAL_COLUMNS: 12 !default;
+$COLUMN_NAMES: (
+  one: 1,
+  two: 2,
+  three: 3,
+  four: 4,
+  five: 5,
+  six: 6,
+  seven: 7,
+  eight: 8,
+  nine: 9,
+  ten: 10,
+  eleven: 11,
+  twelve: 12,
+  one-third: 4,
+  two-thirds: 8,
+  one-half: 6
+  ) !default;
+
 
 // Variables
 // ––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -47,12 +70,12 @@ $bp-extra-large : 1200px !default;
 /// This is a map leveraged by the responsive query manager mixin. Its keys
 /// should be kept in-sync with the preceding breakpoint variables.
 $breakpoints: (
-  'bp-extra-small': $bp-extra-small,
-  'bp-small': $bp-small,
-  'bp-medium': $bp-medium,
-  'bp-large': $bp-large,
-  'bp-extra-large': $bp-extra-large
-);
+  bp-extra-small: $bp-extra-small,
+  bp-small: $bp-small,
+  bp-medium: $bp-medium,
+  bp-large: $bp-large,
+  bp-extra-large: $bp-extra-large
+) !default;
 
 // Colors: feel free to define more here
 $white: #ffffff !default;
@@ -88,8 +111,7 @@ $font-stack: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, san
 $container-width: 960px !default;
 $container-width-larger-than-bp-extra-small: 85% !default;
 $container-width-larger-than-bp-small: 80% !default;
-$total-columns: 12 !default;
-$column-width: 100 / $total-columns !default; // Calculates individual column width based off of # of columns
+$column-width: 100 / $TOTAL_COLUMNS !default; // Calculates individual column width based off of # of columns
 $column-margin: 4% !default; // The default gutter size between columns
 
 // Misc
@@ -99,7 +121,7 @@ $global-radius: 4px !default;
 // Functions
 // ––––––––––––––––––––––––––––––––––––––––––––––––––
 @function grid-column-width($n) {
-  @return $column-width * $n - ($column-margin*($total-columns - $n)/$total-columns);
+  @return $column-width * $n - ($column-margin*($TOTAL_COLUMNS - $n)/$TOTAL_COLUMNS);
 }
 
 @function grid-offset-length($n) {
@@ -159,113 +181,21 @@ $global-radius: 4px !default;
 
 // For devices larger than $bp-small
 @media (min-width: $bp-small) {
-  .one.column,
-  .one.columns {
-    width: grid-column-width(1);
-  }
-  .two.columns {
-    width: grid-column-width(2);
-  }
-  .three.columns {
-    width: grid-column-width(3);
-  }
-  .four.columns {
-    width: grid-column-width(4);
-  }
-  .five.columns {
-    width: grid-column-width(5);
-  }
-  .six.columns {
-    width: grid-column-width(6);
-  }
-  .seven.columns {
-    width: grid-column-width(7);
-  }
-  .eight.columns {
-    width: grid-column-width(8);
-  }
-  .nine.columns {
-    width: grid-column-width(9);
-  }
-  .ten.columns {
-    width: grid-column-width(10);
-  }
-  .eleven.columns {
-    width: grid-column-width(11);
-  }
-  .twelve.columns {
-    width: grid-column-width(12);
-  }
-
-  .one-third.column {
-    width: grid-column-width($total-columns/3);
-  }
-  .two-thirds.column {
-    width: grid-column-width(($total-columns/3)*2);
-  }
-
-  .one-half.column {
-    width: grid-column-width($total-columns/2);
-  }
-
-  // Offsets
-  .offset-by-one.column,
-  .offset-by-one.columns {
-    margin-left: grid-offset-length(1);
-  }
-  .offset-by-two.column,
-  .offset-by-two.columns {
-    margin-left: grid-offset-length(2);
-  }
-  .offset-by-three.column,
-  .offset-by-three.columns {
-    margin-left: grid-offset-length(3);
-  }
-  .offset-by-four.column,
-  .offset-by-four.columns {
-    margin-left: grid-offset-length(4);
-  }
-  .offset-by-five.column,
-  .offset-by-five.columns {
-    margin-left: grid-offset-length(5);
-  }
-  .offset-by-six.column,
-  .offset-by-six.columns {
-    margin-left: grid-offset-length(6);
-  }
-  .offset-by-seven.column,
-  .offset-by-seven.columns {
-    margin-left: grid-offset-length(7);
-  }
-  .offset-by-eight.column,
-  .offset-by-eight.columns {
-    margin-left: grid-offset-length(8);
-  }
-  .offset-by-nine.column,
-  .offset-by-nine.columns {
-    margin-left: grid-offset-length(9);
-  }
-  .offset-by-ten.column,
-  .offset-by-ten.columns {
-    margin-left: grid-offset-length(10);
-  }
-  .offset-by-eleven.column,
-  .offset-by-eleven.columns {
-    margin-left: grid-offset-length(11);
-  }
-
-  .offset-by-one-third.column,
-  .offset-by-one-third.columns {
-    margin-left: grid-offset-length($total-columns/3);
-  }
-  .offset-by-two-thirds.column,
-  .offset-by-two-thirds.columns {
-    margin-left: grid-offset-length(($total-columns/3)*2);
-  }
-
-  .offset-by-one-half.column,
-  .offset-by-one-half.columns {
-    margin-left: grid-offset-length($total-columns/2);
+  @each $name, $value in $COLUMN_NAMES {
+    @if $value == 1 {
+      .#{$name}.column,
+      .#{$name}.columns {
+        width: grid-column-width($value);
+      }
+    } @else {
+      .#{$name}.columns {
+        width: grid-column-width($value);
+      }
+    }
+    .offset-by-#{$name}.column,
+    .offset-by-#{$name}.columns {
+      margin-left: grid-offset-length($value);
+    }
   }
 }
 
