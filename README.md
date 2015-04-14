@@ -17,11 +17,6 @@ $ bower install skeleton.scss
 ```
 
 
-## Using Normalize.css (or not)
-
-Skeleton leverages the illustrious Normalize.css for element resets. It is configured by default to utilize this file via an `@import` statement. If you do not wish to use `normalize.css`, simply comment out its importing in the beginning of `skeleton.scss`.
-
-
 ## Mixin(s?)
 
 Currently, Skeleton.scss uses a single mixin for including targeted media queries inside of declaration blocks. More mixins may come later, though the point of this framework is to leverage SASS while keeping a minimal footprint that does not fundamentally alter the bare bones approach of the vanilla Skeleton framework.
