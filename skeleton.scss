@@ -150,7 +150,7 @@ $global-radius: 4px !default;
 
   box-sizing: border-box;
   width: 100%;
-  max-width: 960px;
+  max-width: $container-width;
   margin: 0 auto;
   padding: 0 20px;
   @include respond-to('bp-extra-small') {
