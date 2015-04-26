@@ -1,0 +1,82 @@
+// Constants (strongly advise against editing)
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+$TOTAL_COLUMNS: 12 !default;
+$COLUMN_NAMES: (
+  one: 1,
+  two: 2,
+  three: 3,
+  four: 4,
+  five: 5,
+  six: 6,
+  seven: 7,
+  eight: 8,
+  nine: 9,
+  ten: 10,
+  eleven: 11,
+  twelve: 12,
+  one-third: 4,
+  two-thirds: 8,
+  one-half: 6
+  ) !default;
+
+
+// Variables
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// Breakpoints
+$bp-extra-small : 400px !default;
+$bp-small       : 550px !default;
+$bp-medium      : 750px !default;
+$bp-large       : 1000px !default;
+$bp-extra-large : 1200px !default;
+
+/// This is a map leveraged by the responsive query manager mixin. Its keys
+/// should be kept in-sync with the preceding breakpoint variables.
+$breakpoints: (
+  bp-extra-small: $bp-extra-small,
+  bp-small: $bp-small,
+  bp-medium: $bp-medium,
+  bp-large: $bp-large,
+  bp-extra-large: $bp-extra-large
+) !default;
+
+// Colors: feel free to define more here
+$white: #ffffff !default;
+$lightest-gray: #f1f1f1 !default;
+$lighter-gray: #e1e1e1 !default;
+$light-gray: #d1d1d1 !default;
+$gray: #bbbbbb !default;
+$dark-gray: #888888 !default;
+$darker-gray: #555555 !default;
+$darkest-gray: #333333 !default;
+$almost-black: #222222 !default;
+$bright-cyan: #33c3f0 !default;
+$vivid-cyan: #1eaedb !default;
+
+// Themed Color Variables: cite color variables for clarity
+$primary-color: $bright-cyan !default;
+$border-color: $lighter-gray !default;
+$button-border-color: $gray !default;
+$button-font-color: $darker-gray !default;
+$button-hover-border-color: $dark-gray !default;
+$button-hover-font-color: $darkest-gray !default;
+$button-primary-font-color: $white !default;
+$input-background-color: $white !default;
+$input-border-color: $light-gray !default;
+$code-background-color: $lightest-gray !default;
+$link-color: $vivid-cyan !default;
+$font-color: $almost-black !default;
+
+// Typography
+$font-stack: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+
+//Grid Variables
+$container-width: 960px !default;
+$container-width-larger-than-bp-extra-small: 85% !default;
+$container-width-larger-than-bp-small: 80% !default;
+$column-width: 100 / $TOTAL_COLUMNS !default; // Calculates individual column width based off of # of columns
+$column-margin: 4% !default; // The default gutter size between columns
+
+// Misc
+$global-radius: 4px !default;

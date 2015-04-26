@@ -1,0 +1,11 @@
+// Clearing
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.container:after,
+.row:after,
+.u-cf {
+  display: table;
+  clear: both;
+
+  content: '';
+}

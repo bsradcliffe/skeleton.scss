@@ -1,0 +1,29 @@
+// Media Queries
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+/// Note: The best way to structure the use of media queries is to create the
+/// queries near the relevant code using the 'respond-to' mixin. For example,
+/// if you wanted to change the styles for buttons on small devices, you would
+/// include the 'respond-to' mixin with the 'bp-small' argument and write the
+/// desired properties for the declaration block.
+///
+/// The more conventional method of handling media queries would be to insert
+/// the following query blocks around the desired rules, but that kinda takes
+/// the fun and utility out of SASS.
+
+@import '../settings';
+
+// Larger than mobile
+@media (min-width: $bp-extra-small) {}
+
+// Larger than phablet (also point when grid becomes active)
+@media (min-width: $bp-small) {}
+
+// Larger than tablet
+@media (min-width: $bp-medium) {}
+
+// Larger than desktop
+@media (min-width: $bp-large) {}
+
+// Larger than Desktop HD
+@media (min-width: $bp-extra-large) {}

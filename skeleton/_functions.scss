@@ -1,0 +1,10 @@
+// Functions
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@function grid-column-width($n) {
+  @return $column-width * $n - ($column-margin*($TOTAL_COLUMNS - $n)/$TOTAL_COLUMNS);
+}
+
+@function grid-offset-length($n) {
+  @return grid-column-width($n) + $column-margin;
+}

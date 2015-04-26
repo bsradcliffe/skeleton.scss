@@ -1,0 +1,19 @@
+// Base Styles
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@import '../settings';
+
+/* NOTE
+html is set to 62.5% so that all the REM measurements throughout Skeleton
+are based on 10px sizing. So basically 1.5rem = 15px :) */
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: $font-stack;
+  font-size: 1.5em; /* Currently ems cause Chrome bug misinterpreting rems on body element */
+  font-weight: 400;
+  line-height: 1.6;
+
+  color: $font-color;
+}

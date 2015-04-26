@@ -1,0 +1,56 @@
+// Grid
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@import '../settings';
+@import '../functions';
+@import '../mixins';
+
+.container {
+  position: relative;
+
+  box-sizing: border-box;
+  width: 100%;
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: 0 20px;
+  @include respond-to('bp-extra-small') {
+    width: $container-width-larger-than-bp-extra-small;
+    padding: 0;
+  }
+  @include respond-to('bp-small') {
+    width: $container-width-larger-than-bp-small;
+  }
+}
+.column,
+.columns {
+  float: left;
+
+  box-sizing: border-box;
+  width: 100%;
+  @include respond-to('bp-small') {
+    margin-left: 4%;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+// For devices larger than $bp-small
+@media (min-width: $bp-small) {
+  @each $name, $value in $COLUMN_NAMES {
+    @if $value == 1 {
+      .#{$name}.column,
+      .#{$name}.columns {
+        width: grid-column-width($value);
+      }
+    } @else {
+      .#{$name}.columns {
+        width: grid-column-width($value);
+      }
+    }
+    .offset-by-#{$name}.column,
+    .offset-by-#{$name}.columns {
+      margin-left: grid-offset-length($value);
+    }
+  }
+}
