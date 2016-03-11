@@ -12,10 +12,8 @@ input[type='url'],
 input[type='password'],
 textarea,
 select {
-  box-sizing: border-box;
   height: 38px;
   padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
-
   border: 1px solid $input-border-color;
   border-radius: $global-radius;
   background-color: $input-background-color;
