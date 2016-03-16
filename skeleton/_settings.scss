@@ -15,9 +15,9 @@ $COLUMN_NAMES: (
   ten: 10,
   eleven: 11,
   twelve: 12,
-  one-third: 4,
-  two-thirds: 8,
-  one-half: 6
+  one-third: $TOTAL_COLUMNS/3,
+  two-thirds: ($TOTAL_COLUMNS/3)*2,
+  one-half: $TOTAL_COLUMNS/2
   ) !default;
 
 
